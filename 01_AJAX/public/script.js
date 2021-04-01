@@ -27,20 +27,14 @@ const app = {
    },
 
    getPos: async function () {
-      return fetch ("/position")
-      .then ( res => { 
-         return res.json() 
-      })
+      return $.get("/position")
       .then ( data => { 
          return { x: parseInt(data.x), y: parseInt(data.y) }
       });  
    },
 
-   fetchSquares: function() {
-      fetch("/squares")
-      .then( res => { 
-         return res.json()
-      })
+   fetchSquares: function() {    
+      $.get("/squares")
       .then( data => { 
          data.forEach( square => 
             app.createSquare({ x: square.x, y: square.y, color: square.color })
@@ -50,10 +44,8 @@ const app = {
 
    sendSquare: async function({ x, y, color }) {
       const url = `/newmove?x=${x}&y=${y}&color=${encodeURIComponent(color)}`;
-      console.log("url", url);
 
-      fetch(url)
-      .then(res => res.json())
+      $.get(url)
       .then(data => console.log("send", data));
    },
 
@@ -74,7 +66,6 @@ const app = {
       return color;
    },
 }
-
 
 $(
    () => {
