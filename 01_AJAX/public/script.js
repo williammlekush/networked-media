@@ -36,10 +36,11 @@ const app = {
    fetchSquares: function() {    
       $.get("/squares")
       .then( data => { 
+         $(".square").remove();
          data.forEach( square => 
             app.createSquare({ x: square.x, y: square.y, color: square.color })
-         )
-      });  
+         );
+      });
    },
 
    sendSquare: async function({ x, y, color }) {
