@@ -10,11 +10,15 @@ const app = {
             return position;
          })
          .then(pos => {
+
+            rdmColor = app.getRandomColor();
+            console.log(rdmColor);
             const sq = {
                x: pos.x,
                y: pos.y,
-               color: app.getRandomColor();
+               color: rdmColor
             }
+            console.log(sq);
             app.sendSquare(sq);
          })
       });
@@ -45,7 +49,8 @@ const app = {
    },
 
    sendSquare: async function({ x, y, color }) {
-      const url = `/newmove?x=${x}&y=${y}&color=${color}`;
+      const url = `/newmove?x=${x}&y=${y}&color=${encodeURIComponent(color)}`;
+      console.log("url", url);
 
       fetch(url)
       .then(res => res.json())

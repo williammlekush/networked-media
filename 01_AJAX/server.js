@@ -26,7 +26,6 @@ app.get(
 app.get(
    '/position',
    (req, res) => {
-      console.log("/position", position);
       res.send(position);
    }
 )
