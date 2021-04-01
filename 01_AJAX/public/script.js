@@ -1,30 +1,34 @@
 const app = {   
 
-   position: {
-      x: 800,
-      y: 800,
-   },
-
    sqW: 10,
 
-   initialize: function() {
-      app.fetchSquares();
-
+   initialize: async function() {
       $("#submit-left").click(() => {
-         app.getPos();
-         app.position.x += app.sqW;
-         app.sendSquare(app.position);
+         app.getPos()
+         .then(position => { 
+            position.x += app.sqW;
+            return position;
+         })
+         .then(pos => {
+            const sq = {
+               x: pos.x,
+               y: pos.y,
+               color: app.getRandomColor();
+            }
+            app.sendSquare(sq);
+         })
       });
 
-      window.setInterval(app.fetchSquares, 100);
+      window.setInterval(app.fetchSquares, 1000);
    },
 
    getPos: async function () {
-      fetch ("/position")
-      .then ( res => { return res.json() })
+      return fetch ("/position")
+      .then ( res => { 
+         return res.json() 
+      })
       .then ( data => { 
-         app.position =  { x: parseInt(data[0].x), y: parseInt(data[0].y) } ;
-         console.log("position", app.position);
+         return { x: parseInt(data.x), y: parseInt(data.y) }
       });  
    },
 
@@ -34,24 +38,24 @@ const app = {
          return res.json()
       })
       .then( data => { 
-         data.forEach( square => {
-            app.createSquare({x: square.x, y: square.y});
-         })
+         data.forEach( square => 
+            app.createSquare({ x: square.x, y: square.y, color: square.color })
+         )
       });  
    },
 
-   sendSquare: async function({ x, y }) {
-      const url = `/newmove?x=${x}&y=${y}`;
+   sendSquare: async function({ x, y, color }) {
+      const url = `/newmove?x=${x}&y=${y}&color=${color}`;
 
       fetch(url)
       .then(res => res.json())
       .then(data => console.log("send", data));
    },
 
-   createSquare: function({x, y}){
+   createSquare: function({x, y, color}){
       const newSq = $("<div></div>")
       .addClass('square')
-      .css({"left": `${x}px`, "top": `${y}px`, "background": app.getRandomColor()});
+      .css({"left": `${x}px`, "top": `${y}px`, "background": color});
 
       $("body").append(newSq);
    },
@@ -64,12 +68,10 @@ const app = {
       }
       return color;
    },
-
-  
 }
 
 
-jQuery(
+$(
    () => {
       app.initialize();
    }

@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Datastore = require('nedb');
-const database = require('mime-db');
 
 const app = express();
 const urlencoderParser = bodyParser.urlencoded({ extendend: true });
@@ -10,11 +9,13 @@ const squares = new Datastore({filename: "squares.db", autoload: true});
 app.use(express.static('public'));
 app.use(urlencoderParser);
 
+let position = { x: 300, y: 300 };
+
 app.get(
    '/squares',
    (req, res) => {
       squares.find(
-         {"_id": { $ne: "pos" } },
+         {},
          (err, data) => {
             res.send(data);
          }
@@ -25,31 +26,28 @@ app.get(
 app.get(
    '/position',
    (req, res) => {
-      squares.find(
-         {"_id": "pos"},
-         (err, data) => {
-            res.send(data)
-         }
-      )
+      console.log("/position", position);
+      res.send(position);
    }
 )
 
 app.get(
    '/newmove',
-   (req, res) => {
-      console.log(req.query);
+   async (req, res) => {
+      console.log("query", req.query);
 
       const data = {
          x: req.query.x,
-         y: req.query.y
+         y: req.query.y,
+         color: req.query.color
       };
 
-      insertData({
+      await insertData({
          database: squares,
          data: data
       });
 
-      squares.update({ "_id": "pos" }, { $set: { "x": req.query.x, "y": req.query.y } }, {}, function () {});
+      position = { x: data.x, y: data.y };
    }
 )
 
