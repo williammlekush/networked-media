@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>FavQuotes</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'/>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+      <link rel="stylesheet" href="/css/favorite-quotes.css" type='text/css'>
+   </head>
+   <body>
+      <h1>Our Favorite Quotes</h1>
+      
+      <form method='POST' action='/favorite-quotes'>
+         <div class='input'>
+            <input class='quote' type='text' name='quote'>
+            <label for='quote'>Quote</label>
+         </div>
+         <div class='input'>
+            <input class='author' type='text' name='author'>
+            <label for='author'>Author</label>
+         </div>
+         <input class='submit' type='submit' name='submit' value='Add Quote'>
+      </form>
+
+   <% 
+      if (data.length > 0) {
+         data.forEach((quote) => { 
+   %>
+            <p>
+               <%= quote.quote %> </br>
+               - <span class = 'italic'><%= quote.author %></span>
+            </p>
+   <%    });
+      } else { console.log('ERROR: NO DATA') }
+   %>
+
+   <footer>
+      <a href='/' class='material-icons-round home-link'>home</a>
+      FavQuotes created by <a class='author-link' href='https://williammlekush.com' target='_blank'>William Mlekush</a>
+   </footer>
+   </body>
+</html>
+   

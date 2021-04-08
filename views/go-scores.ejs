@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>go.</title>
+  
+      <meta name="description" content="scoreboard - go.">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'/>
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> 
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+      <link rel='stylesheet' type='text/css' href='/css/go-scores.css'>
+
+   </head>
+   <body>
+
+      <h1>go. scores</h1>
+      
+      <% 
+         if (data.length > 0) {
+            data.sort((a, b) => (a.score > b.score) ? -1 : 1)
+      %>
+
+         <div class='table'>
+            <% 
+               data.forEach((score) => { 
+            %>
+               <div class='row'>
+                  <div class='score'>
+                     <%= score.score %>
+                  </div>
+                  <div class='username'>
+                     <%= score.username %>
+                  </div>
+               </div>
+            <%    
+               });
+            %>
+         </div>
+      <%         
+         } else { console.log('ERROR: NO DATA') }
+      %>
+      
+
+      <footer>
+         <a href='/' class='material-icons-round home-link link-style'>home</a>
+         go. created by <a class='author-link link-style' href='https://williammlekush.com' target='_blank'>William Mlekush</a>
+      </footer>
+
+   </body>
+</html>

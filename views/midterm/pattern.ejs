@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>tesselate</title>
+
+   <meta name="description" content="tesselate">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>
+
+   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'/>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+   <link rel='stylesheet' type='text/css' href='/css/midterm/pattern.css'>
+   <script src="/js/midterm/pattern.js" type='text/javascript' async defer></script>
+</head>
+<body>
+
+   <button class='end' type='button'>end this madness</button>
+   <form class='score-submit' method='POST' action='/midterm-scores'>
+      <h2>You clicked <span id='score-val'></span> times.</h2>
+      <label for='username'>Username:
+         <input class='username' type='text' name='username'>
+      </label>
+      <input class='score' type='hidden' name='score'>
+      <input class='database' type='hidden' name='database' value='pattern'>
+      <input class='submit' type='submit' name='submit' value='Add Score to Scoreboard'>
+   </form>
+
+   
+   <footer>
+      <a href='/games-no' class='material-icons-round home-link'>home</a>
+      word-dump created by <a class='author-link' href='https://williammlekush.com' target='_blank'>William Mlekush</a>
+   </footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+* {
+   box-sizing: border-box;
+   font-family: 'Raleway', sans-serif;
+   font-size: 18px;
+   border: none;
+   background: none;
+   text-decoration: none;
+   font-weight: 400;
+   padding: 0.5em 1em;
+   color: white;
+   width: 100%;
+}
+
+body {
+   padding: 0 20%;
+   background: black;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-items: flex-start; 
+   text-align: center;  
+}
+
+.word {
+   width: auto;
+   position: absolute;
+   text-align: center;
+   z-index: -10;
+}
+
+.score {
+   font-size: 1.5em;
+}
+
+.link-style {
+   color: lightblue;
+   cursor: pointer;
+   transition: 0.1s;
+}
+
+.link-style:hover,
+.linkestyle:focus {
+   color: rgb(94, 221, 94);
+}
+
+.link-style:active {
+   color: cyan;
+}
+
+form.score-submit {
+   display: none;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-content: center;
+   text-align: center;
+}
+
+form.score-submit input,
+input#word-in,
+button.submit {
+   border: 1px white solid;
+   border-radius: 0.25em;
+   width: auto;
+   padding: 0.25em 0.5em;
+   transition: 0.3s;
+   width: auto;
+}
+
+form.score-submit input.username {
+   margin: 0.5em 0.5em 1em;
+   text-align: left;
+}
+
+form.score-submit input.submit,
+button.submit {
+   border: none;
+   background: forestgreen;
+   cursor: pointer;
+   width: auto;
+   margin-top: 0.75em;
+}
+
+form.score-submit input.submit:hover,
+button.submit:hover {
+   background: rgb(94, 221, 94);
+}
+
+form.score-submit label {
+   font-weight: 400;
+   transition: 0.3s;
+   width: 100%;
+}
+
+form.score-submit label:hover {
+   color: rgb(94, 221, 94);
+}
+
+form.score-submit label:hover > input.username,
+form.score-submit input.username:focus,
+input#word-in:hover,
+input#word-in:focus {
+   border-color:  rgb(94, 221, 94);
+}
+
+form.score-submit input:hover
+form.score-submit input:focus {
+   color: rgb(94, 221, 94);
+}
+
+button.submit{
+   margin-bottom: 1em;
+}
+
+footer {
+   font-family: 'Libre Franklin', sans-serif;
+   font-size: 12px;
+   text-align: center;
+   position: fixed;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   padding: 2em 1em;
+}
+
+.author-link,
+.home-link {
+   color: lightblue;
+   transition: 0.1s;
+   cursor: pointer;
+}
+
+.author-link {
+   font-family: 'Libre Franklin', sans-serif;
+   font-size: 12px;
+   padding: 0;
+}
+
+.home-link {
+   padding: 0.5em 1em;
+   font-size: 36px;
+   width: 100%;
+}
+
+.author-link:hover,
+.author-link:focus,
+.home-link:hover,
+.home-link:focus {
+   color: rgb(94, 221, 94);
+}
+
+.author-link:active,
+.home-link:active {
+   color: cyan;
+}

@@ -1,0 +1,143 @@
+* {
+   box-sizing: border-box;
+   font-family: 'Raleway', sans-serif;
+   color: white;
+   font-size: 18px;
+   margin: 0;
+   padding: 0.5em 1em;
+   width: 100%;
+   text-align: left;
+   font-weight: 500;
+   text-decoration: none;
+   list-style-type: none;
+}
+
+body {
+   display: flex;
+   flex-flow: row wrap;
+   background: black;
+   justify-content: center;
+   align-items: center;
+   padding: 0 20%;
+}
+
+h1 {
+   font-size: 28px;
+}
+
+nav {
+   display: flex;
+   flex-flow: row wrap;  
+   justify-content: center;
+   align-items: center; 
+}
+
+nav a {
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
+   width: auto;
+   min-width: 300px;
+   position: relative;
+   padding: 0.5em;
+   margin: 1em;
+}
+
+a .thumbnail#thumbnail-go {
+   background-image: url('../../assets/go.png');
+}
+
+a .thumbnail#thumbnail-tag {
+   background-image: url('../../assets/tag.png');
+}
+
+a .thumbnail#thumbnail-quiz {
+   background-image: url('../../assets/quiz.png');
+}
+
+a .thumbnail#thumbnail-word {
+   background-image: url('../../assets/word.png');
+}
+
+a .thumbnail#thumbnail-pattern {
+   background-image: url('../../assets/pattern.png');
+}
+
+a .thumbnail,
+a .caption {
+   border-radius: 0.25em;
+}
+
+a .thumbnail {
+   width: 300px;
+   height: 300px;
+   background-size: cover;
+   box-shadow: 0 0 12px grey;
+}
+
+a .caption {
+   z-index: 10;
+   display:flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-items: center;
+   width: 300px;
+   height: 300px;
+   top: 0.5em;
+   left: 50%;
+   transform: translateX(-50%);
+   position: absolute;
+   background: black;
+   color: white;
+   text-align: center;
+   opacity: 0;
+   transition: 0.3s;
+   font-weight: 500;
+}
+
+a .title,
+.author-link,
+#scores-link {
+   color: lightblue;
+   transition: 0.1s;
+   text-align: center;
+   padding: 1em 1em 0;
+}
+
+a:hover > .title,
+a:focus > .title,
+.author-link:hover,
+.author-link:focus,
+#scores-link:hover,
+#scores-link:focus {
+   color: rgb(94, 221, 94);
+}
+
+a:hover > .caption,
+a:focus > .caption {
+   opacity: 0.8;
+}
+
+a:active > .title,
+.author-link.active,
+#scores-link.active {
+   color: cyan;
+}
+
+.author-statement {
+   width: 100%;
+   font-family: 'Libre Franklin', sans-serif;
+   font-size: 12px;
+   text-align: center;
+   padding: 0.5em;
+   position: relative;
+}
+
+a.author-link {
+   font-family: 'Libre Franklin', sans-serif;
+   font-size: 12px;
+   transition: 0.1s;
+   padding: 0;
+}
+

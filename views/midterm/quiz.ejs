@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Who am I?</title>
+
+   <meta name="description" content="Who am I?">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'/>
+   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> 
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+   <link rel='stylesheet' type='text/css' href='/css/midterm/quiz.css'>
+   <script src="/js/midterm/quiz.js" type='text/javascript' async defer></script>
+</head>
+   <h1>Who am I?</h1>
+   <p class='prompt'></p>
+
+   <div class='scale'>
+      <div class='option'>
+         <input class='response' id='1' type='radio' name='resposne' value='1'>
+         <label for='1'>strongly disagree</label>
+      </div>
+
+      <div class='option'>
+         <input class='response' id='2' type='radio' name='resposne' value='2'>
+         <label for='2'>disagree</label>
+      </div>
+
+      <div class='option'>
+         <input class='response' id='3' type='radio' name='resposne' value='3'>
+         <label for='3'>neutral</label>
+      </div>
+
+      <div class='option'>
+         <input class='response' id='4' type='radio' name='resposne' value='4'>
+         <label for='4'>agree</label>
+      </div>
+
+      <div class='option'>
+         <input class='response' id='5' type='radio' name='resposne' value='5'>
+         <label for='5'>strongly agree</label>
+      </div>
+   </div>
+
+   <div class='buttons'>
+      <button class='link-style' id='end' type='button'>end this madness</button>
+      <button class='link-style right-aligned' id='next' type='button'>begin</button>
+      <button class='link-style' id='restart' type='button'>restart</button>
+      <button class='link-style' id='meaning' type='button'>What does this mean?</button>
+   </div>
+
+   <form class='score-submit' method='POST' action='/midterm-scores'>
+      <label for='username'>Username:
+         <input class='username' type='text' name='username'>
+      </label>
+      <input class='score' type='hidden' name='score'>
+      <input class='database' type='hidden' name='database' value='quiz'>
+      <input class='submit' type='submit' name='submit' value='Add Score to Scoreboard'>
+   </form>
+
+   
+   <footer>
+      <a href='/games-no' class='material-icons-round home-link'>home</a>
+      Who am I? created by <a class='author-link' href='https://williammlekush.com' target='_blank'>William Mlekush</a>
+   </footer>
+<body>
+   
+</body>
+</html>

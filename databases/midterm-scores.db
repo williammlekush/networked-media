@@ -1,0 +1,6 @@
+{"dbId":"go","title":"go.","scores":[],"_id":"9XyXsVBrdRMJX71M"}
+{"dbId":"quiz","title":"Who am I?","scores":[],"_id":"G49q93j5cE0blVpA"}
+{"dbId":"pattern","title":"tesselate","scores":[],"_id":"Ss4InDmknyojJJXe"}
+{"dbId":"tag","scores":[],"title":"tag!","_id":"bBwvGImscF08EFXy"}
+{"dbId":"word","scores":[],"title":"word-dump","_id":"hR9Ef9QZAFC0fvQh"}
+{"$$indexCreated":{"fieldName":"dbId","unique":true,"sparse":false}}

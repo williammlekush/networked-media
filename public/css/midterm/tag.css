@@ -1,0 +1,175 @@
+* {
+   box-sizing: border-box;
+   font-family: 'Raleway', sans-serif;
+   font-size: 18px;
+   border: none;
+   background: none;
+   text-decoration: none;
+   font-weight: 400;
+   color: white;
+}
+
+body {
+   padding:20%;
+   background: black;
+}
+
+.content {
+   position: absolute;
+   padding: 0;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 80%;
+   width: 80%;
+}
+
+h1.first-tag {
+   font-size: 2em;
+   text-align: center;
+}
+
+button#end {
+   display: none;
+   position: absolute;
+   left: 50%;
+   top: -5%;
+   transform: translate(-50%);
+   padding: 0 1em 1em;
+}
+
+.link-style {
+   color: lightblue;
+   cursor: pointer;
+   transition: 0.1s;
+}
+
+.link-style:hover,
+.linkestyle:focus {
+   color: rgb(94, 221, 94);
+}
+
+.link-style:active {
+   color: cyan;
+}
+
+.dot {
+   position: absolute;
+   background: red;
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   left: 50%;
+   transform: translateX(-50%);
+   box-shadow: 0 0 8px red;
+}
+
+.message {
+   max-width: 180px;
+   text-align: center;
+   z-index: -999;
+}
+
+footer {
+   font-family: 'Libre Franklin', sans-serif;
+   font-size: 12px;
+   text-align: center;
+   position: fixed;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   padding: 2em 1em;
+}
+
+.author-link,
+.home-link {
+   color: lightblue;
+   transition: 0.1s;
+   cursor: pointer;
+}
+
+.author-link {
+   font-family: 'Libre Franklin', sans-serif;
+   font-size: 12px;
+   padding: 0;
+}
+
+h2,
+#score-val {
+   font-size: 1.5em;
+   margin-bottom: 1em;
+   width: auto;
+}
+
+form.score-submit {
+   display: none;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-content: center;
+   text-align: center;
+   background: black;
+}
+
+form.score-submit input {
+   border: 1px white solid;
+   border-radius: 0.25em;
+   width: auto;
+   padding: 0.25em 0.5em;
+   transition: 0.3s;
+   width: auto;
+}
+
+form.score-submit input.username {
+   margin: 0.5em 0.5em 1em;
+   text-align: left;
+}
+
+form.score-submit input.submit {
+   border: none;
+   background: forestgreen;
+   cursor: pointer;
+   width: auto;
+   margin-top: 0.75em;
+}
+
+form.score-submit input.submit:hover {
+   background: rgb(94, 221, 94);
+}
+
+form.score-submit label {
+   font-weight: 400;
+   transition: 0.3s;
+   width: 100%;
+}
+
+form.score-submit label:hover {
+   color: rgb(94, 221, 94);
+}
+
+form.score-submit label:hover > input.username,
+form.score-submit input.username:focus {
+   border-color:  rgb(94, 221, 94);
+}
+
+form.score-submit input:hover
+form.score-submit input:focus {
+   color: rgb(94, 221, 94);
+}
+
+.home-link {
+   padding: 0.5em 1em;
+   font-size: 36px;
+   width: 100%;
+}
+
+.author-link:hover,
+.author-link:focus,
+.home-link:hover,
+.home-link:focus {
+   color: rgb(94, 221, 94);
+}
+
+.author-link:active,
+.home-link:active {
+   color: cyan;
+}

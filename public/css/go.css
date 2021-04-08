@@ -1,0 +1,210 @@
+* {
+   box-sizing: border-box;
+   font-family: 'Raleway', sans-serif;
+   color: white;
+   font-size: 18px;
+   margin: 0;
+   padding:1em 0.5em;
+   width: 100%;
+   text-align: center;
+   font-weight: 500;
+   text-decoration: none;
+}
+
+input {
+   background: none;
+   border: none;
+   transform: none;
+   -webkit-transform: none;
+}
+
+body {
+   background-color: black;
+   display: -webkit-box; 
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 100%;
+}
+
+footer {
+   position: absolute;
+   font-family: 'Libre Franklin', sans-serif;
+   font-size: 12px;
+   text-align: center;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   padding: 2em 1em;
+   background: black;
+}
+
+.author-link {
+   font-family: 'Libre Franklin', sans-serif;
+   font-size: 12px;
+}
+
+#counter {
+   font-size: 1.5em;
+}
+
+#prompt {
+   line-height: 1.5em;
+}
+
+form.score-submit {
+   display: none;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-content: flex-start;
+}
+
+form.score-submit input {
+   border: 1px white solid;
+   border-radius: 0.25em;
+   width: auto;
+   padding: 0.25em 0.5em;
+   transition: 0.3s;
+   width: auto;
+}
+
+form.score-submit input.username {
+   margin-left: 0.5em;
+   text-align: left;
+}
+
+form.score-submit input.submit {
+   border: none;
+   background: forestgreen;
+   cursor: pointer;
+   width: auto;
+   margin-top: 0.75em;
+}
+
+form.score-submit input.submit:hover {
+   background: rgb(94, 221, 94);
+}
+
+form.score-submit label {
+   font-weight: 400;
+   transition: 0.3s;
+   width: 100%;
+}
+
+form.score-submit label:hover {
+   color: rgb(94, 221, 94);
+}
+
+form.score-submit label:hover > input.username,
+form.score-submit input.username:focus {
+   border-color:  rgb(94, 221, 94);
+}
+
+form.score-submit input:hover
+form.score-submit input:focus {
+   color: rgb(94, 221, 94);
+}
+
+.wrapper-loader {
+   width: 100%;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#loader {
+   display: -webkit-box; 
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex; 
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   border: 2px red solid;
+   padding: 0;
+   height: 1em;
+   border-radius: 0.33em;
+   max-width: 200px;
+}
+
+#loader-bar {
+   background-color: red;
+   padding: 0;
+   height: 14px;
+   border: 1px transparent solid;
+   z-index: -1;
+
+   -webkit-animation: load 10s linear;
+   -moz-animation: load 10s linear;
+   -o-animation: load 10s linear;
+   animation: load 10s linear;
+
+   -webkit-transform-origin: left;
+   -moz-transform-origin: left;
+   -o-transform-origin: left;
+   transform-origin: left;
+}
+
+@-webkit-keyframes load {
+   0% { -webkit-transform: scaleX(0);  }
+   100% { -webkit-transform: scaleX(100%); }
+}
+
+@-moz-keyframes load {
+   0% { -moz-transform: scaleX(0);  }
+   100% { -moz-transform: scaleX(100%); }
+}
+
+@-o-keyframes load {
+   0% { -o-transform: scaleX(0);  }
+   100% { -o-transform: scaleX(100%); }
+}
+
+@keyframes load {
+   0% { 
+      transform: scaleX(0);  
+   }
+   100% { 
+      transform: scaleX(100%); 
+   }
+}
+
+#links .link-style {
+   width: auto;
+}
+
+.link-style {
+   color: lightblue;
+   cursor: pointer;
+   transition: 0.1s;
+}
+
+.link-style:hover,
+.linkestyle:focus {
+   color: rgb(94, 221, 94);
+}
+
+.link-style:active {
+   color: cyan;
+}
+
+.home-link {
+   font-size: 28px;
+}
+
+@media screen and (max-width: 800px) {
+   body {
+      padding: 0 20%;
+   }
+ }
+

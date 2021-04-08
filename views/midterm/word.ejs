@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>word dump</title>
+
+   <meta name="description" content="word dump">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'/>
+   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> 
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+   <link rel='stylesheet' type='text/css' href='/css/midterm/word.css'>
+   <script src="/js/midterm/word.js" type='text/javascript' async defer></script>
+</head>
+<body>
+
+   <h2 class='prompt'></h2>
+   <label class='label-word-in' for='word-in'>Type the first word that comes to mind</label>
+   <input type=text id='word-in' name='word'>
+
+   <div class='buttons'>
+      <button class='submit' id='new-word' type='button'>Add Word</button>
+      <button class='link-style' id='end' type='button'>end this madness</button>
+      <button class='link-style' id='restart' type='button'>restart</button>
+   </div>
+
+   <form class='score-submit' method='POST' action='/midterm-scores'>
+      <label for='username'>Username:
+         <input class='username' type='text' name='username'>
+      </label>
+      <input class='score' type='hidden' name='score'>
+      <input class='database' type='hidden' name='database' value='word'>
+      <input class='submit' type='submit' name='submit' value='Add Score to Scoreboard'>
+   </form>
+
+   <footer>
+      <a href='/games-no' class='material-icons-round home-link'>home</a>
+      word-dump created by <a class='author-link' href='https://williammlekush.com' target='_blank'>William Mlekush</a>
+   </footer>
+
+</body>
+</html>
